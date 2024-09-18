@@ -11,7 +11,7 @@ const Layout = () => {
   return (
     <>
       <Home />
-      <Outlet /> {/* This renders the specific route component */}
+      <Outlet /> 
     </>
   );
 }

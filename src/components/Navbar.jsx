@@ -26,7 +26,13 @@ const Navbar = () => {
           to="/login"
           className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300 ease-in-out"
         >
-          Login/Sign Up
+          Login
+        </Link>
+        <Link
+          to="/signup"
+          className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300 ease-in-out"
+        >
+          Sign Up
         </Link>
 
         {/* Profile with Icon */}
