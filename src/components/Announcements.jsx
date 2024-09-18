@@ -5,7 +5,7 @@ const Announcements = () => {
         <ul className="list-disc ml-5 space-y-2">
           <li>Government introduces new tax reform policies.</li>
           <li>COVID-19 vaccination drive for all citizens.</li>
-          <li>Upcoming elections scheduled for next month.</li>
+          <li>Upcoming examinations scheduled for next month.</li>
         </ul>
       </div>
     );
