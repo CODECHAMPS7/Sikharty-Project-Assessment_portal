@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import { Data } from './Data'; // Import your data
-import './Question.css'; // Import your CSS file
+// import './Question.css'; // Import your CSS file
 
 const Question = () => {
     const [data, setData] = useState(Data);
