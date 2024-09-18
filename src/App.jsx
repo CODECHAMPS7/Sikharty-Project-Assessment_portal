@@ -6,15 +6,20 @@ import Login from './Pages/Login';
 import Signup from './Pages/SIgnup';  // Fix casing for Signup
 import Dashboard from './Pages/Dashboard';
 import Profile from './Pages/profile';
+import Footer from './components/Footer';
 
 const Layout = () => {
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Home />
-      <Outlet /> {/* This renders the specific route component */}
-    </>
+      <div className="flex-grow">
+        <Outlet />
+      </div>
+      <Footer />
+    </div>
   );
 }
+
 
 function App() {
   return (
@@ -22,8 +27,7 @@ function App() {
       <Routes>
       
         <Route path="/" element={<Layout />}>
-         
-          <Route path="body" element={<Body />} />
+          <Route path="/" element={<Body />} />
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} /> 
           <Route path="dashboard" element={<Dashboard />} />
