@@ -2,7 +2,7 @@ import image1 from '../Assets/nda.jpeg'
 import image2 from '../Assets/ssc.jpg'
 import image3 from '../Assets/sbi.jpg'
 import image4 from '../Assets/cds.jpg'
-import Govlogo from '../Assets/govlogo.jpg'
+// import Govlogo from '../Assets/govlogo.jpg'
 
 const Dashboard = () => {
 
@@ -144,17 +144,6 @@ const Dashboard = () => {
 
     {/* Footer section */}
 
-      <footer className='bg-[#e2e8f0] text-black py-4 '>
-        <div className='container flex mx-auto items-center justify-between px-4'>
-          <div className='flex items-center'>
-            <img src={Govlogo} alt="" className="h-11"/>
-            <span className="ml-4 text-lg font-semibold">&copy; Government of India </span>
-          </div>
-          <div>
-            <p>Toll Free Contact Number : 0000 0000</p>
-          </div>
-        </div>
-      </footer>
 
     </div>
   );
