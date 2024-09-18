@@ -1,18 +1,26 @@
+import { useState } from 'react';
+
 const Links = () => {
-    return (
-      <div className="p-10">
-        <h2 className="text-3xl font-semibold mb-5 center">Central Government Online Assesment Portal</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          <a href="/services" className="bg-orange-400 text-white p-5 rounded-lg text-center  hover:bg-green-800  hover:text-white">Previous year questions</a>
-          <a href="/departments" className="bg-orange-400 text-white p-5 rounded-lg text-center  hover:bg-green-800  hover:text-white">Additional Links</a>
-          <a href="/forms" className="bg-orange-400 text-white p-5 rounded-lg text-center  hover:bg-green-800  hover:text-white">Help Desk</a>
-          <a href="/tax" className="bg-orange-400 text-white p-5 rounded-lg text-center hover:bg-green-800  hover:text-white">Recent Notices</a>
-          <a href="/policies" className="bg-orange-400 text-white p-5 rounded-lg text-center hover:bg-green-800 hover:text-white">Events</a>
-          <a href="/health" className="bg-orange-400 text-white p-5 rounded-lg text-center  hover:bg-green-800 hover:text-white">Form-Filup</a>
-        </div>
+  const [currentContent, setCurrentContent] = useState(''); // State to manage displayed content
+
+  return (
+    <div className="p-10">
+      <h2 className="text-3xl font-semibold mb-5 center">Central Government Online Assesment Portal</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <button onClick={() => setCurrentContent('Previous Year Questions')} className="bg-orange-400 text-white p-5 rounded-lg text-center hover:bg-green-800 hover:text-white">Previous Year Questions</button>
+        <button onClick={() => setCurrentContent('Additional Links')} className="bg-orange-400 text-white p-5 rounded-lg text-center hover:bg-green-800 hover:text-white">Additional Links</button>
+        <button onClick={() => setCurrentContent('Help Desk')} className="bg-orange-400 text-white p-5 rounded-lg text-center hover:bg-green-800 hover:text-white">Help Desk</button>
+        <button onClick={() => setCurrentContent('Recent Notices')} className="bg-orange-400 text-white p-5 rounded-lg text-center hover:bg-green-800 hover:text-white">Recent Notices</button>
+        <button onClick={() => setCurrentContent('Events')} className="bg-orange-400 text-white p-5 rounded-lg text-center hover:bg-green-800 hover:text-white">Events</button>
+        <button onClick={() => setCurrentContent('Form Fillup')} className="bg-orange-400 text-white p-5 rounded-lg text-center hover:bg-green-800 hover:text-white">Form Fillup</button>
       </div>
-    );
-  };
-  
-  export default Links;
-  
+
+      {/* Conditionally display content */}
+      <div className="mt-10 p-5 bg-gray-100 rounded-lg">
+        {currentContent ? <h3>{currentContent}</h3> : <h3>Select a category to display information</h3>}
+      </div>
+    </div>
+  );
+};
+
+export default Links;

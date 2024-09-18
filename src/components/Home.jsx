@@ -1,8 +1,5 @@
 import Navbar from "./Navbar";
-import Banner from "./Banner";  // Create Banner component
-import Announcements from "./Announcements";  // Create Announcements component
-import Links from "./Links";  // Create Links component
-import Footer from "./Footer";  // Create Footer component
+import Announcements from "./Announcements";  // Announcements now includes Banner, Links, and Footer
 
 const Home = () => {
   return (
@@ -10,17 +7,8 @@ const Home = () => {
       {/* Navigation Bar */}
       <Navbar />
 
-      {/* Hero/Banner Section */}
-      <Banner />
-
-      {/* Announcements Section */}
+      {/* Announcements Section (which includes Banner, Links, and Footer) */}
       <Announcements />
-
-      {/* Important Links Section */}
-      <Links />
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };
