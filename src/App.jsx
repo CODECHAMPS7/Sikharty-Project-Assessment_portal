@@ -7,6 +7,7 @@ import Signup from './Pages/SIgnup';  // Fix casing for Signup
 import Dashboard from './Pages/Dashboard';
 import Profile from './Pages/profile';
 import Footer from './components/Footer';
+import Quiz from './Pages/Quiz';
 
 const Layout = () => {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="signup" element={<Signup />} /> 
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="profile" element={<Profile />} />
+          <Route path='Quiz' element ={<Quiz />}></Route>
         </Route>
       </Routes>
     </Router>
