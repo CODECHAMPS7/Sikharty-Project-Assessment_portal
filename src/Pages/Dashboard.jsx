@@ -8,20 +8,21 @@ import { Link } from "react-router-dom";
 const Dashboard = () => {
   return (
     <div>
+
       {/* Hero Section of exam dashboard */}
 
-      <section className="bg-slate-300 py-10">
+      <section className="bg-slate-300 py-10 w-full ">
         <div className="container mx-auto text-center px-4">
           <h1 className="text-3xl font-bold mb-4">Exam Dashboard</h1>
           <p className="text-lg text-gray-700">
             Track your progress and manage your upcoming exams
           </p>
-          <div className="flex justify-center gap-8 mt-8">
-            <div className="bg-slate-200 p-6 rounded-lg shadow-md">
+          <div className="flex justify-center gap-8 mt-8 flex-col md:flex-row">
+            <div className="bg-slate-200 p-6  rounded-lg shadow-md">
               <h2 className="text-3xl font-bold">4</h2>
               <p className="text-gray-600">Upcoming Exams</p>
             </div>
-            <div className="bg-slate-200 p-6 rounded-lg shadow-md">
+            <div className="bg-slate-200 p-6  rounded-lg shadow-md">
               <h2 className="text-3xl font-bold">2</h2>
               <p className="text-gray-600">Exams Completed</p>
             </div>
@@ -39,7 +40,7 @@ const Dashboard = () => {
 
       {/* Upcoming Exams Section */}
 
-      <section className="">
+      <section className="w-full">
         <div className="container mx-auto ">
           <h2 className="text-2xl font-bold text-center p-6  bg-[#5a87a6] text-white w-full">
             Upcoming Exams
@@ -65,7 +66,7 @@ const Dashboard = () => {
 
             {/* Card 2 */}
 
-            <div className="bg-slate-100 p-6 w-full sm:w-[300px] rounded-lg shadow-lg">
+            <div className="bg-slate-100 p-6 w-[300px] rounded-lg shadow-lg">
               <img
                 src={image2}
                 alt="Exam"
@@ -82,7 +83,7 @@ const Dashboard = () => {
 
             {/* Card 3 */}
 
-            <div className="bg-slate-100 p-6 w-full sm:w-[300px] rounded-lg shadow-lg">
+            <div className="bg-slate-100 p-6 w-[300px] rounded-lg shadow-lg">
               <img
                 src={image3}
                 alt="Exam"
@@ -99,7 +100,7 @@ const Dashboard = () => {
 
             {/* Card 4 */}
 
-            <div className="bg-slate-100 p-6 w-full sm:w-[300px] rounded-lg shadow-lg">
+            <div className="bg-slate-100 p-6 w-[300px] rounded-lg shadow-lg">
               <img
                 src={image4}
                 alt="Exam"
@@ -150,7 +151,7 @@ const Dashboard = () => {
 
             {/* Card 2 */}
 
-            <div className="bg-slate-100 p-6 w-full sm:w-[300px] rounded-lg shadow-lg">
+            <div className="bg-slate-100 p-6  w-[300px] rounded-lg shadow-lg">
               <img
                 src={image2}
                 alt="Exam"

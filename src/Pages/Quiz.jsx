@@ -1,132 +1,133 @@
-import { useState } from 'react';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Import useNavigate for navigation
+import { Data } from "./Data"; // Import your data
 
 const Quiz = () => {
-  const questions = [
-    {
-        question: "What does HTML stand for?",
-        options: ["Hyper Text Markup Language", "Hyperlinks and Text Markup Language", "High-Level Text Markup Language", "Hyper Text Multi Language"],
-        answer: "Hyper Text Markup Language"
-      },
-      {
-        question: "Which of the following is a JavaScript data type?",
-        options: ["String", "Integer", "Character", "Float"],
-        answer: "String"
-      },
-      {
-        question: "In Python, which of the following is used to define a function?",
-        options: ["func", "def", "function", "define"],
-        answer: "def"
-      },
-      {
-        question: "Which CSS property is used to change the background color?",
-        options: ["color", "bgcolor", "background-color", "bg-color"],
-        answer: "background-color"
-      },
-      {
-        question: "What is the output of the following code: console.log(typeof null);?",
-        options: ["null", "object", "undefined", "boolean"],
-        answer: "object"
-      },
-      {
-        question: "Which of the following is not a valid HTML element?",
-        options: ["<div>", "<span>", "<section>", "<data>"],
-        answer: "<data>"
-      },
-      {
-        question: "In which language is the Android operating system primarily written?",
-        options: ["Java", "C++", "Python", "Swift"],
-        answer: "Java"
-      },
-      {
-        question: "What does SQL stand for?",
-        options: ["Structured Query Language", "Standard Query Language", "Simple Query Language", "Sequential Query Language"],
-        answer: "Structured Query Language"
-      },
-      {
-        question: "In Git, what command is used to clone a repository?",
-        options: ["git copy", "git clone", "git fetch", "git pull"],
-        answer: "git clone"
-      },
-      {
-        question: "What is the purpose of the `this` keyword in JavaScript?",
-        options: ["It refers to the global object.", "It refers to the current function.", "It refers to the current object in context.", "It has no specific purpose."],
-        answer: "It refers to the current object in context."
-      }
-  ];
+  const [data, setData] = useState(Data);
+  const [index, setIndex] = useState(0);
+  const [score, setScore] = useState(0);
+  const [selectedAnswers, setSelectedAnswers] = useState(Array(data.length).fill(null)); // State for selected answers
+  const navigate = useNavigate(); // Initialize useNavigate hook
 
-  const [userAnswers, setUserAnswers] = useState(Array(questions.length).fill(''));
-  const [score, setScore] = useState(null);
-
-  const handleOptionChange = (questionIndex, selectedOption) => {
-    const newAnswers = [...userAnswers];
-    newAnswers[questionIndex] = selectedOption;
-    setUserAnswers(newAnswers);
+  // Function to move to the next question or finish the quiz
+  const next = () => {
+    if (index < data.length - 1) {
+      setIndex(index + 1);
+    } else {
+      finishQuiz(); // Call finishQuiz if it's the last question
+    }
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    let totalScore = 0;
+  // Function to finish the quiz
+  const finishQuiz = () => {
+    // Display score and handle submission logic
+    document.querySelector(".score").innerHTML = `<p>Your Score: ${score}/${data.length}</p>`;
+    document.querySelector(".quiz").style.display = "none";
+    // document.getElementById('next').style.display = 'none';
+    document.getElementById('submit').style.display = 'none';
+    document.getElementById('previous').style.display = 'none';
 
-    questions.forEach((question, index) => {
-      if (userAnswers[index] === question.answer) {
-        totalScore += 1;
-      }
-    });
-
-    setScore(totalScore);
+    // Add finish button
+    const finishBtn = document.createElement("button");
+    finishBtn.innerHTML = "Finish";
+    finishBtn.classList.add(
+      "finish",
+      "bg-red-500",
+      "text-white",
+      "px-6",
+      "py-2",
+      "rounded-lg",
+      "hover:bg-red-700",
+      "transition",
+      "duration-300",
+      "ml-4" // Add margin-left to the "Finish" button
+    );
+    finishBtn.addEventListener("click", () => navigate("/")); // Navigate to home page
+    document.querySelector(".btns").appendChild(finishBtn);
   };
 
-  const handleClear = () => {
-    setUserAnswers(Array(questions.length).fill(''));
-    setScore(null);
+  // Function to move to the previous question
+  const previous = () => {
+    if (index > 0) {
+      setIndex(index - 1);
+    }
+  };
+
+  // Handle radio input change
+  const handleInput = (event) => {
+    const chooseVal = event.target.value;
+    const newSelectedAnswers = [...selectedAnswers];
+    newSelectedAnswers[index] = chooseVal; // Save selected answer
+
+    if (chooseVal === data[index].ans) {
+      setScore(score + 1);
+    }
+
+    setSelectedAnswers(newSelectedAnswers); // Update state
   };
 
   return (
-    <div className="flex justify-center items-center pt-10">
-      <div className=" p-6 rounded-lg shadow-lg w-full max-w-md">
-        <h1 className="text-2xl font-bold mb-4 text-center text-blue-700">Basic Quiz</h1>
-        <form onSubmit={handleSubmit}>
-          {questions.map((question, index) => (
-            <div key={index} className="mb-4">
-              <h3 className="font-semibold mb-2">{question.question}</h3>
-              {question.options.map((option) => (
-                <div key={option} className="flex items-center mb-2">
-                  <input
-                    type="radio"
-                    id={option}
-                    name={`question-${index}`}
-                    value={option}
-                    checked={userAnswers[index] === option}
-                    onChange={() => handleOptionChange(index, option)}
-                    className="mr-2"
-                  />
-                  <label htmlFor={option} className="ml-2 border border-black rounded-lg p-2 cursor-pointer">
-                    {option}
-                  </label>
-                </div>
-              ))}
+    <div className="section flex justify-center items-center bg-[#5a87a6]" style={{ minHeight: '75.9vh' }}>
+      <div className="container mx-auto max-w-lg p-6 bg-[#e2e8f0] shadow-lg rounded-lg">
+        <div className="quiz">
+          <div className="mb-6">
+            <h1 className="text-2xl font-bold text-gray-800 mb-4">
+              Q{index + 1}: {data[index].q}
+            </h1>
+            <p className="text-gray-600">Question {index + 1} of {data.length}</p>
+          </div>
+
+          {/* Options */}
+          {['a', 'b', 'c', 'd'].map((option) => (
+            <div key={option} className="option mb-4 flex items-center p-3 bg-gray-50 rounded-lg hover:bg-gray-100 cursor-pointer">
+              <input
+                name="select"
+                type="radio"
+                onChange={handleInput}
+                className="checkedValue mr-3"
+                value={data[index][option]}
+                checked={selectedAnswers[index] === data[index][option]} // Check if this is the selected answer
+              />
+              <p className="text-gray-700">{option.toUpperCase()}: {data[index][option]}</p>
             </div>
           ))}
-          <div className="flex justify-between mt-4">
-            <button 
-              type="submit" 
-              className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 w-full mr-2">
+        </div>
+
+        {/* Score display */}
+        <div className="score text-center text-xl text-green-600 mt-6">
+          {/* Dynamic score here */}
+        </div>
+
+        {/* Navigation buttons */}
+        <div className="btns flex justify-center mt-8">
+          {/* Conditionally render the Previous button */}
+          {index > 0 && (
+            <button
+              id="previous"
+              onClick={previous}
+              className="px-6 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition duration-300 mr-4"
+            >
+              Previous
+            </button>
+          )}
+          {index < data.length - 1 ? (
+            <button
+              id="next"
+              onClick={next}
+              className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300"
+            >
+              Next
+            </button>
+          ) : (
+            <button
+              id="submit"
+              onClick={finishQuiz}
+              className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300"
+            >
               Submit
             </button>
-            <button 
-              type="button" 
-              onClick={handleClear} 
-              className="bg-gray-300 text-black px-4 py-2 rounded-lg hover:bg-gray-400 w-full">
-              Clear
-            </button>
-          </div>
-        </form>
-
-        {score !== null && (
-          <div className="mt-6 text-center">
-            <h2 className="text-lg font-bold">Your Score: {score} out of {questions.length}</h2>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );
