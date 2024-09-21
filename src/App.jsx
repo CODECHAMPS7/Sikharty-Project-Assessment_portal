@@ -1,41 +1,41 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet } from 'react-router-dom';
 
 import Home from './components/Home';
 import Body from './components/Body';
 import Login from './Pages/Login';
-import Signup from './Pages/SIgnup';  
+import Signup from './Pages/SIgnup';  // Fix casing for Signup
 import Dashboard from './Pages/Dashboard';
 import Profile from './Pages/profile';
 import Footer from './components/Footer';
 import Quiz from './Pages/Quiz';
-import Navbar from './components/Navbar'; 
+
+const Layout = () => {
+  return (
+    <div className="flex flex-col min-h-screen">
+      <Home />
+      <div className="flex-grow">
+        <Outlet />
+      </div>
+      <Footer />
+    </div>
+  );
+}
+
 
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
-       
-        <Navbar /> 
-
-        
-        <div className="flex-grow">
-          <Routes>
-            
-            <Route path="/" element={<Home />} />
-
-           
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/" element={<Body />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/quiz" element={<Quiz />} />
-          </Routes>
-        </div>
-
-        
-        <Footer />
-      </div>
+      <Routes>
+      
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<Body />} />
+          <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup />} /> 
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path='Quiz' element ={<Quiz />}></Route>
+        </Route>
+      </Routes>
     </Router>
   );
 }

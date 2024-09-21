@@ -1,4 +1,3 @@
-import Banner from "./Banner";
 import { useState } from "react";
 
 const Announcement = () => {
@@ -6,18 +5,15 @@ const Announcement = () => {
 
   return (
     <div className="p-10">
-      {/* Banner Section */}
-      <Banner />
-
       {/* Announcements Section */}
-
-      <div className="p-10">
-      <h2 className="text-3xl font-semibold mb-5">Latest Announcements</h2>
-      <ul className="list-disc ml-5 space-y-2">
-        <li>Government introduces new tax reform policies.</li>
-        <li>COVID-19 vaccination drive for all citizens.</li>
-        <li>Upcoming examinations scheduled for next month.</li>
-      </ul>
+      <div>
+        <h2 className="text-3xl font-semibold mb-5">Latest Announcements</h2>
+        <ul className="list-disc ml-5 space-y-2">
+          <li>Government introduces new tax reform policies.</li>
+          <li>COVID-19 vaccination drive for all citizens.</li>
+          <li>Upcoming examinations scheduled for next month.</li>
+        </ul>
+      </div>
 
       {/* Links Section */}
       <div className="p-10">
@@ -60,20 +56,18 @@ const Announcement = () => {
             Form Fillup
           </button>
         </div>
-        </div>
+      </div>
 
-        {/* Conditionally display selected content */}
-        <div className="mt-10 p-5 bg-gray-100 rounded-lg">
-          {currentContent ? (
-            <h3>{currentContent}</h3>
-          ) : (
-            <h3>Select a category to display information</h3>
-          )}
-        </div>
+      {/* Conditionally display selected content */}
+      <div className="mt-10 p-5 bg-gray-100 rounded-lg">
+        {currentContent ? (
+          <h3>{currentContent}</h3>
+        ) : (
+          <h3>Select a category to display information</h3>
+        )}
       </div>
 
       {/* Footer Section */}
-      
     </div>
   );
 };

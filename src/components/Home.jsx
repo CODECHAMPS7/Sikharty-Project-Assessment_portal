@@ -1,11 +1,9 @@
-import Announcement from "../Pages/Announcement";
-
+import Navbar from "./Navbar"
 
 const Home = () => {
   return (
     <div>
-      {/* Main homepage content */}
-      <Announcement/>
+      <Navbar/>
     </div>
   );
 };
