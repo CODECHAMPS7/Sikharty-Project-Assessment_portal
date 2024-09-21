@@ -10,6 +10,8 @@ const Announcement = () => {
       <Banner />
 
       {/* Announcements Section */}
+
+      <div className="p-10">
       <h2 className="text-3xl font-semibold mb-5">Latest Announcements</h2>
       <ul className="list-disc ml-5 space-y-2">
         <li>Government introduces new tax reform policies.</li>
@@ -58,6 +60,7 @@ const Announcement = () => {
             Form Fillup
           </button>
         </div>
+        </div>
 
         {/* Conditionally display selected content */}
         <div className="mt-10 p-5 bg-gray-100 rounded-lg">
@@ -70,22 +73,7 @@ const Announcement = () => {
       </div>
 
       {/* Footer Section */}
-      <footer className="bg-gray-800 text-white py-5">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
-          {/* Left side content */}
-          <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
-            <p>&copy; 2024 Central Government Portal. All Rights Reserved.</p>
-            <p>Toll-Free Contact Number: 1800 000 0000</p>
-          </div>
-
-          {/* Right side content */}
-          <div className="text-center md:text-right">
-            <a href="/privacy" className="text-blue-300">Privacy Policy</a> 
-            <span className="mx-2">|</span>
-            <a href="/contact" className="text-blue-300">Contact Us</a>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   );
 };
