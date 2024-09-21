@@ -1,12 +1,11 @@
-import Announcment from "../Pages/Announcment";
-import Banner from "../Pages/Banner";
+import Banner from "../Pages/Banner"
+import Announcement from "../Pages/Announcement"
 
 const Body = () => {
   return (
-    <div className="p-5 max-w-2xl mx-auto text-center">
-      
-      <Banner />
-      <Announcment />
+    <div>    
+       <Banner/>
+      <Announcement/> 
     </div>
   );
 }
