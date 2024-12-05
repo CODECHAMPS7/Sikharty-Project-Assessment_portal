@@ -1,13 +1,172 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!--link-->
+     <link rel="stylesheet" href="style.css">
+     <!--title of page-->
+     <title>Assignment 2</title>
+     <!--font space-->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,100&display=swap"
+          rel="stylesheet">
+     <script src="https://kit.fontawesome.com/60cb06f733.js" crossorigin="anonymous"></script>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+          crossorigin="anonymous"></script>
+</head>
+
+<body>
+     <div class="container">
+          <!--Navbar-->
+          <header>
+               <nav class="nav-all">
+                    <!--logo-->
+                    <div>
+                         <img src="./asset/pic3.jpg" alt="Logo" class="logo">
+                    </div>
+                    <div class="list">
+                         <ul class="menu-list">
+                              <li class="list-item">Home</li>
+                              <li class="list-item">About</li>
+                              <li class="list-item">Services</li>
+                              <li class="list-item">Portfolio</li>
+                              <li class="list-item">pricing</li>
+                         </ul>
+                    </div>
+                    <!--navbar button-->
+                    <div>
+                         <button class="nav-button">Contact us</button>
+                    </div>
+               </nav>
+          </header>
+          <!--Hero section-->
+          <section class="contain">
+               <div class="left-section">
+                    <h1 class="main-text">We Help you <br> <span>Crush</span> Your <br>Competition</h1>
+                    <p class="note">Build trust to connect your brand to billions of users and grow your revenue through
+                         SOE.</p>
+                    <button class="main-btton">See our Services</button>
+               </div>
+               <div class="right-section">
+                    <img src="asset/pic1.png" alt="main pic">
+               </div>
+          </section>
+     </div>
+     <!-- cards -->
+     <div class="section myc">
+          <div class="container ">
+               <div class="row">
+                    <div class="col-md-3 col-xs-12 col-sm--12 col-lg-3 m-2 w-18">
+                         <div class="animate__animated animate bounce card ecosyscard w-18">
+                              <div class="ecosyscontainer container mt-3">
+                                   <img src="./asset/img3.jpg"
+                                        class="card-img-top" alt="..." />
+                              </div>
+                              <div class="ecosyscard-body card-body">
+                                   <h5 class="ecosyscard-title card-title ms-1">Recent Exams 
+                                   </h5>
+                                   <p class="ecosyscard-text card-text mb-5 ms-1">
+                                        Click to view more
+                                   </p>
+
+                                   <a href="https://freesnippetcode.blogspot.com/" target="_blank"
+                                        class="ecosysbtn btn btn-primary mb-1 mt-1">Go now</a>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="col-md-3 col-xs-12 col-sm--12 col-lg-3 m-2 w-18">
+                         <div class="animate__animated animate bounce card ecosyscard w-18">
+                              <div class="ecosyscontainer container mt-3">
+                                   <img src="./asset/img.jpg"
+                                        class="card-img-top" alt="..." />
+                              </div>
+                              <div class="ecosyscard-body card-body">
+                                   <h5 class="ecosyscard-title card-title ms-1">Active Exams</h5>
+                                   <p class="ecosyscard-text card-text mb-5 ms-1">
+                                        Click to view more
+                                   </p>
+
+                                   <a href="https://freesnippetcode.blogspot.com/" target="_blank"
+                                        class="ecosysbtn btn btn-primary mb-1 mt-1">Go now</a>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="col-md-3 col-xs-12 col-sm--12 col-lg-3 m-2 w-18">
+                         <div class="animate__animated animate bounce card ecosyscard w-18">
+                              <div class="ecosyscontainer container mt-3">
+                                   <img src="./asset/img5.jpg"
+                                        class="card-img-top" alt="..." />
+                              </div>
+                              <div class="ecosyscard-body card-body">
+                                   <h5 class="ecosyscard-title card-title ms-1">Events</h5>
+                                   <p class="ecosyscard-text card-text mb-5 ms-1">
+                                    Click to view more
+                                   </p>
+
+                                   <a href="https://freesnippetcode.blogspot.com/" target="_blank"
+                                        class="ecosysbtn btn btn-primary mb-1 mt-1">Go now</a>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+     </div>
+
+     <!-- cards -->
+     <footer>
+          <footer class="bg-body-tertiary text-center">
+               <!-- Grid container -->
+               <div class="container p-4 pb-0">
+                    <!-- Section: Social media -->
+                    <section class="mb-4">
+                         <!-- Facebook -->
+                         <a data-mdb-ripple-init class="btn text-white btn-floating m-1"
+                              style="background-color: #3b5998;" href="#!" role="button"><i
+                                   class="fab fa-facebook-f"></i></a>
+
+                         <!-- Twitter -->
+                         <a data-mdb-ripple-init class="btn text-white btn-floating m-1"
+                              style="background-color: #55acee;" href="#!" role="button"><i
+                                   class="fab fa-twitter"></i></a>
+
+                         <!-- Google -->
+                         <a data-mdb-ripple-init class="btn text-white btn-floating m-1"
+                              style="background-color: #dd4b39;" href="#!" role="button"><i
+                                   class="fab fa-google"></i></a>
+
+                         <!-- Instagram -->
+                         <a data-mdb-ripple-init class="btn text-white btn-floating m-1"
+                              style="background-color: #ac2bac;" href="#!" role="button"><i
+                                   class="fab fa-instagram"></i></a>
+
+                         <!-- Linkedin -->
+                         <a data-mdb-ripple-init class="btn text-white btn-floating m-1"
+                              style="background-color: #0082ca;" href="#!" role="button"><i
+                                   class="fab fa-linkedin-in"></i></a>
+                         <!-- Github -->
+                         <a data-mdb-ripple-init class="btn text-white btn-floating m-1"
+                              style="background-color: #333333;" href="#!" role="button"><i
+                                   class="fab fa-github"></i></a>
+                    </section>
+                    <!-- Section: Social media -->
+               </div>
+               <!-- Grid container -->
+
+               <!-- Copyright -->
+               <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                    © 2020 Copyright:
+                    <a class="text-body" href="https://mdbootstrap.com/">Mygovtdesk.com</a>
+               </div>
+               <!-- Copyright -->
+          </footer>
+     </footer>
+</body>
+
 </html>

@@ -1,0 +1,197 @@
+* {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+     font-family: 'Roboto', sans-serif;
+}
+
+.container {
+     max-width: 130rem;
+     margin: 0 auto;
+     padding: 0 119px;
+}
+
+/*Nav bar*/
+.logo {
+     width: 50%;
+
+}
+
+.nav-all {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-top: 39px;
+}
+
+.list {
+     flex-grow: 1;
+     padding-left: 62px;
+}
+
+.menu-list {
+     display: flex;
+     align-items: center;
+     list-style: none;
+     gap: 40px;
+     font-weight: 500;
+     font-size: 20px;
+     line-height: 24px;
+     color: #000;
+}
+
+.menu-list li {
+     cursor: pointer;
+}
+
+.menu-list li:hover {
+     color: #5955b3;
+}
+
+.nav-button {
+     padding: 14px 28px;
+     background-color: #5955b3;
+     border-radius: 12px;
+     border: none;
+     display: flex;
+     align-items: center;
+     line-height: 24px;
+     font-weight: 500;
+     font-size: 16px;
+     text-align: center;
+     color: #ffffff;
+}
+
+/*Hero section*/
+.contain {
+     display: flex;
+     align-items: center;
+     margin-top: 55px;
+     justify-content: space-between;
+}
+
+.main-text {
+     font-weight: 600;
+     font-size: 64px;
+     line-height: 74px;
+     color: #3c2f60;
+}
+
+.main-text span {
+     color: #5955b3;
+}
+
+.note {
+     font-weight: 400;
+     font-size: 18px;
+     letter-spacing: 0.1rem;
+     color: #828282;
+     margin-top: 15px;
+     line-height: 24px;
+}
+
+.main-btton {
+     padding: 14px 28px;
+     background-color: #5955b3;
+     border-radius: 12px;
+     border: none;
+     display: flex;
+     align-items: center;
+     line-height: 24px;
+     font-weight: 500;
+     font-size: 16px;
+     text-align: center;
+     color: #ffffff;
+     margin-top: 47px;
+
+}
+
+.side-barr {
+     margin-left: 20px;
+     margin-right: 20px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap');
+
+.ecosyscard {
+     border-radius: 40px;
+     overflow: hidden;
+     border: 0;
+     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06),
+          0 2px 4px rgba(0, 0, 0, 0.07);
+     transition: all 0.15s ease;
+}
+
+.ecosyscard:hover {
+     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1),
+          0 10px 8px rgba(0, 0, 0, 0.015);
+}
+
+.ecosyscard-body .ecosyscard-title {
+     font-family: 'Lato', sans-serif;
+     font-weight: 700;
+     letter-spacing: 0.3px;
+     font-size: 24px;
+     color: #121212;
+}
+
+.ecosyscard-text {
+     font-family: 'Lato', sans-serif;
+     font-weight: 400;
+     font-size: 15px;
+     letter-spacing: 0.3px;
+     color: #4E4E4E;
+
+}
+
+.ecosyscard .ecosyscontainer {
+     width: 88%;
+     background: #F0EEF8;
+     border-radius: 30px;
+     height: 140px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.ecosyscontainer:hover>img {
+     transform: scale(1.2);
+}
+
+.ecosyscontainer img {
+     padding: -75px;
+     margin-top: -40px;
+     margin-bottom: -40px;
+     transition: 0.4s ease;
+     cursor: pointer;
+}
+
+.ecosysbtn {
+     background: #EEECF7;
+     border: 0;
+     color: #5535F0;
+     width: 98%;
+     font-weight: bold;
+     border-radius: 20px;
+     height: 40px;
+     transition: all 0.2s ease;
+}
+
+.ecosysbtn:hover {
+     background: #441CFF;
+}
+
+.ecosysbtn:focus {
+     background: #441CFF;
+     outline: 0;
+}
+
+.w-18 {
+     width: 18rem;
+}
+
+.myc {
+     margin-left: 18%;
+     margin-top: 10%;
+     margin-bottom: 10%;
+}
